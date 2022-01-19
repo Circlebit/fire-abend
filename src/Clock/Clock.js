@@ -38,6 +38,7 @@ const Clock = () => {
     return (
         <ReactEcharts
             option={{
+                color: ['#91cc75', 'lightgrey'],
                 angleAxis: {
                     max: 100
                 },
@@ -69,7 +70,7 @@ const Clock = () => {
                     stack: 'a'
                 }],
                 legend: {
-                    show: true,
+                    show: false,
                     data: ['Done', 'ToDo']
                 }
             }}
