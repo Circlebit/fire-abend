@@ -1,4 +1,4 @@
-import ReactEcharts from "echarts-for-react"; 
+import ReactEcharts from "echarts-for-react";
 
 const Clock = () => {
 
@@ -35,25 +35,25 @@ const Clock = () => {
         return (data.maxDaysInMonth - data.currentDayInMonth) / data.maxDaysInMonth * 100;
     }
 
-    return (  
+    return (
         <ReactEcharts
-        option={{
-            angleAxis: {
-                max: 100
-            },
-            radiusAxis: {
-                type: 'category',
-                data: ['Month', 'Week', 'Day'],
-                z: 10
-            },
-            polar: {
-                center: ['50%', '50%']
-            },
-            series: [{
+            option={{
+                angleAxis: {
+                    max: 100
+                },
+                radiusAxis: {
+                    type: 'category',
+                    data: ['Month', 'Week', 'Day'],
+                    z: 10
+                },
+                polar: {
+                    center: ['50%', '50%']
+                },
+                series: [{
                     type: 'bar',
                     data: [
-                        percentDoneThisMonth(myData), 
-                        percentDoneThisWeek(myData), 
+                        percentDoneThisMonth(myData),
+                        percentDoneThisWeek(myData),
                         percentDoneToday(myData)],
                     coordinateSystem: 'polar',
                     name: 'Done',
@@ -61,21 +61,21 @@ const Clock = () => {
                 }, {
                     type: 'bar',
                     data: [
-                        percentToDoThisMonth(myData), 
-                        percentToDoThisWeek(myData), 
+                        percentToDoThisMonth(myData),
+                        percentToDoThisWeek(myData),
                         percentToDoToday(myData)],
                     coordinateSystem: 'polar',
                     name: 'ToDo',
                     stack: 'a'
                 }],
-            legend: {
-                show: true,
-                data: ['Done', 'ToDo']
-            }
-       }}
-    />
+                legend: {
+                    show: true,
+                    data: ['Done', 'ToDo']
+                }
+            }}
+        />
 
     );
 }
- 
+
 export default Clock;
